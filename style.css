@@ -1,0 +1,762 @@
+/* ========================================
+   ПОДКЛЮЧЕНИЕ ШРИФТА
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f8f9fa;
+}
+.header {
+    width: 100%;
+    height: 150px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header-container {
+    width: 100%;
+    max-width: 1600px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    height: 22px;
+    width: auto;
+    display: block;
+}
+
+.header-nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+}
+
+.header-nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.25s ease;
+    white-space: nowrap;
+    position: relative;
+}
+
+
+.header-nav a:hover {
+    color: #735DFC;
+}
+
+.header-nav a:hover::after {
+    width: 100%;
+}
+
+.header-download {
+    flex-shrink: 0;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 146px;
+    height: 53px;
+    border-radius: 30px;
+    border: 2px solid #735DFC;
+    background-color: #735DFC;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    text-decoration: none;
+    transition: all 0.25s ease-in-out;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-download:hover {
+    background-color: #ffffff;
+    color: #735DFC;
+    border: 2px solid #735DFC;
+    box-shadow: 0 4px 16px rgba(115, 93, 252, 0.25);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 1600px) {
+    .header-container {
+        max-width: 1280px;
+        padding: 0 40px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ: ДЛЯ ПЛАНШЕТОВ (1024px)
+   ======================================== */
+@media (max-width: 1024px) {
+    .header {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        padding: 0 20px;
+        gap: 12px;
+    }
+
+    .header-nav {
+        gap: 24px;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding-top: 8px;
+        border-top: 1px solid #eaeaea;
+    }
+
+    .header-nav a {
+        font-size: 16px;
+    }
+
+    .btn-download {
+        width: 130px;
+        height: 46px;
+        font-size: 16px;
+    }
+
+    .header-logo img {
+        height: 32px;
+    }
+}
+
+/* ========================================
+   АДАПТИВ: ДЛЯ МОБИЛЬНЫХ (768px)
+   ======================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 0 16px;
+        gap: 10px;
+    }
+
+    .header-nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .header-nav a {
+        font-size: 14px;
+    }
+
+    .header-nav a::after {
+        display: none;
+    }
+
+    .btn-download {
+        width: 110px;
+        height: 40px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    .header-logo img {
+        height: 28px;
+    }
+}
+
+/* ========================================
+   ДЛЯ ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНОВ (480px)
+   ======================================== */
+@media (max-width: 480px) {
+    .header-nav {
+        gap: 12px;
+    }
+
+    .header-nav a {
+        font-size: 12px;
+    }
+
+    .btn-download {
+        width: 96px;
+        height: 36px;
+        font-size: 12px;
+    }
+
+    .header-logo img {
+        height: 24px;
+    }
+}
+/* ============================================================
+   ГЕРОЙ (исправленный)
+   ============================================================ */
+.hero {
+    height: 600px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #F9EFE5 0%, #F6DBE1 50%, #F2C3DB 100%);
+    padding: 0;
+    margin: 0;
+}
+
+.hero__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1600px; /* ← контентная зона 1920 */
+    margin: 0 auto;    /* ← центрирование */
+    padding: 0 40px;   /* ← отступы как в хэдере */
+}
+
+.hero__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 141px;
+    padding-bottom: 20px;
+    max-width: 680px; /* чтобы текст не растягивался */
+}
+
+.hero__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 1.2;
+    color: #000000;
+    margin: 0 0 32px 0;
+    letter-spacing: -0.5px;
+}
+
+.hero__text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    margin: 0 0 40px 0;
+    max-width: 680px;
+}
+
+/* ===== КНОПКА ===== */
+.btn--hero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 247px;
+    height: 58px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    border: 2px solid #735DFC;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn--hero:hover {
+    background-color: #735DFC;
+    color: #ffffff;
+}
+
+/* ===== КАРТИНКА ===== */
+.hero__image {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+    padding-top: 23px;
+}
+
+.hero__image img {
+    height: 547.21px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+/* ============================================================
+   БЛОК-РАЗДЕЛИТЕЛЬ (Акцентная полоса)
+   ============================================================ */
+.divider {
+    height: 64px;
+    background-color: #735DFC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.divider__inner {
+    width: 100%;
+    height: 100%;
+    max-width: 1600px; /* контентная зона 1920 */
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider__text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+/* ============================================================
+   БЛОК "О ПРИЛОЖЕНИИ" (Белый)
+   ============================================================ */
+.about-app {
+    height: 700px;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden; /* чтобы картинка не вылезала за пределы блока */
+}
+
+.about-app__wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== КОНТЕЙНЕР С КОНТЕНТОМ ===== */
+.about-app__inner {
+    width: 100%;
+    max-width: 1600px; /* контентная зона 1920 */
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* чтобы заголовок был сверху */
+    padding-top: 64px; /* отступ сверху 64px */
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== ЗАГОЛОВОК ПО ЦЕНТРУ ===== */
+.about-app__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    color: #000000;
+    margin: 0 0 36px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* ===== КОНТЕНТ (текст слева) ===== */
+.about-app__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.about-app__text {
+    max-width: 680px;
+}
+
+.about-app__text p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000000;
+    margin: 0 0 20px 0;
+}
+
+.about-app__text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== КАРТИНКА (прижата к правому краю ОКНА) ===== */
+.about-app__image {
+    position: absolute;
+    right: 0; /* прижата к правому краю окна */
+    top: 0;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about-app__image img {
+    height: 700px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+/* ============================================================
+   БЛОК "КАК ЭТО РАБОТАЕТ?"
+   ============================================================ */
+.how-it-works {
+    height: 670px;
+    background: linear-gradient(135deg, #F2F1F6 0%, #D7CDFF 100%);
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.how-it-works__inner {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 64px;
+}
+
+.how-it-works__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #735DFC;
+    text-align: center;
+    margin: 0 0 64px 0;
+}
+
+.how-it-works__grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1;
+}
+
+/* ===== КАРТОЧКА ===== */
+.how-card {
+    flex: 1;
+    max-width: 512px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    position: relative; 
+}
+
+.how-card__image {
+    width: 213px;
+    height: 213px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.how-card__image img {
+    width: 213px;
+    height: 213px;
+    object-fit: cover;
+    display: block;
+}
+
+.how-card__label {
+    position: absolute;
+    top: 138px;  
+    left: 0;    
+    width: 512px;
+    height: 103px;
+    background-color: #B8A7FE;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 16px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.how-card__label span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+/* ===== ТЕКСТ ПОД КАРТОЧКОЙ ===== */
+.how-card__text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+    margin-top: 48px;
+    line-height: 1.6;
+    background: transparent;
+    padding: 0;
+}
+/* ============================================================
+   БЛОК "УЗНАЙ СЕБЯ"
+   ============================================================ */
+.discover {
+    height: 719px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.discover__inner {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px; /* ← Y = 96px */
+}
+
+.discover__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    margin: 0 0 32px 0; /* ← отступ до текста 32px */
+}
+
+.discover__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+    max-width: 670px;
+    margin: 0 auto 48px auto; /* ← отступ до плашек 48px */
+    line-height: 1.6;
+}
+
+/* ===== СЕТКА С ПЛАШКАМИ (в одну строку) ===== */
+.discover__grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px; /* ← расстояние между плашками */
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ===== ПЛАШКА 784×310 ===== */
+.discover-card {
+    width: 784px;
+    height: 310px;
+    flex-shrink: 0;
+    border: 2px solid #735DFC;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+//* ============================================================
+   БЛОК "УЗНАЙ СЕБЯ"
+   ============================================================ */
+.discover {
+    height: 719px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.discover__inner {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 96px;
+}
+
+.discover__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    margin: 0 0 32px 0;
+}
+
+.discover__subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    text-align: center;
+    max-width: 670px;
+    margin: 0 auto 48px auto;
+    line-height: 1.6;
+}
+
+/* ===== СЕТКА С ПЛАШКАМИ ===== */
+.discover__grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* ===== ПЛАШКА 784×310 ===== */
+.discover-card {
+    width: 784px;
+    height: 227px;
+    flex-shrink: 0;
+    border: 2px solid #735DFC;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    flex-direction: row;
+}
+
+/* ===== КВАДРАТИК СЛЕВА 210×227 ===== */
+.discover-card__image-wrapper {
+    width: 210px;
+    height: 227px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #F9EFE5 0%, #E3DCFF 100%);
+    border-right: 2px solid #735DFC;
+    border-radius: 30px 0 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    order: 0;
+}
+
+/* ===== КАРТИНКА 139×139 ===== */
+.discover-card__image-wrapper img {
+    width: 139px;
+    height: 139px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== ТЕКСТ СПРАВА ===== */
+.discover-card__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 40px 30px 0;
+    height: 100%;
+    max-width: 480px;
+    order: 1;
+}
+
+.discover-card__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #735DFC;
+    margin: 0 0 12px 0;
+    text-align: left;
+}
+
+.discover-card__text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #000000;
+    line-height: 1.5;
+    text-align: left;
+    margin: 0;
+}
+
+
+/* ===== КНОПКА ===== */
+.discover__button-wrapper {
+    margin-top: 32px; /* ← отступ от плашек 32px */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn--discover {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #735DFC;
+    border-radius: 30px;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn--discover:hover {
+    background-color: #735DFC;
+    color: #ffffff;
+}
